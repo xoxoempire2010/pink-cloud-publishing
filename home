@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink Cloud Publishing | Girly Nostalgia Network</title>
+  <meta name="description" content="Home of Girly Nostalgia Diaries, Princess Rach’s Blog, Teen Queen Mag, and more. Your ultimate blogging network for girly nostalgia content.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pink-cloud-publishing.vercel.app/">
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>Pink Cloud Publishing</h1>
+    <nav>
+      <a href="#blogs">Our Blogs</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Welcome!</h2>
+      <p>Your ultimate girly nostalgia blogging network featuring childhood memories, dreamy stories, and fun reviews.</p>
+    </section>
+
+    <section id="blogs">
+      <h2>Our Blogs</h2>
+      <ul>
+        <li><a href="https://girly-nostalgia-diaries.vercel.app/">Girly Nostalgia Diaries</a></li>
+        <li><a href="https://princess-rach-blog.vercel.app/">Princess Rach’s Blog</a></li>
+        <li><a href="https://teen-queen-mag.vercel.app/">Teen Queen Mag</a></li>
+        <li><a href="https://bubblegum-blogger-babes.vercel.app/">Bubblegum Blogger Babes</a></li>
+        <li><a href="https://glitter-gossip-blog.vercel.app/">Glitter Gossip Blog</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pink Cloud Publishing</p>
+  </footer>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff0f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffb6c1;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  color: #ff69b4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffb6c1;
+  margin-top: 20px;
+}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://pink-cloud-publishing.vercel.app/</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
