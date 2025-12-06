@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Universal Mega Massive Blogging Network</title>
+<style>
+    body {
+        background: #ffd6f2;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #d63384;
+    }
+
+    header {
+        text-align: center;
+        padding: 30px;
+        background: #ffb8e8;
+        border-bottom: 4px solid #ff7ac9;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin: 0;
+        color: #ff008c;
+        text-shadow: 2px 2px #fff;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        background: #ffffffcc;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px #ff8ad4;
+    }
+
+    h2 {
+        color: #ff1493;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ff8ad4;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        background: #fff0fb;
+        color: #d63384;
+        font-size: 16px;
+    }
+
+    button {
+        background: #ff4db8;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background: #ff008c;
+    }
+
+    .post {
+        background: #ffe6f7;
+        border: 2px solid #ff8ad4;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .media {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+
+    .video {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💗 Universal Mega Massive Blogging Network 💗</h1>
+</header>
+
+<div class="container">
+    <h2>Create a Blog Post</h2>
+
+    <input id="title" type="text" placeholder="Post Title">
+
+    <textarea id="content" rows="5" placeholder="Write your 2010 nostalgia memories…"></textarea>
+
+    <input id="mediaUrl" type="text" placeholder="Paste your image / GIF / video URL">
+
+    <button onclick="createPost()">Add Post</button>
+
+    <h2>✨ Your Posts ✨</h2>
+    <div id="posts"></div>
+</div>
+
+<script>
+    function createPost() {
+        const title = document.getElementById("title").value;
+        const content = document.getElementById("content").value;
+        const mediaUrl = document.getElementById("mediaUrl").value;
+
+        if (!title || !content) {
+            alert("Please add a title and content!");
+            return;
+        }
+
+        const post = {
+            title,
+            content,
+            mediaUrl,
+            date: new Date().toLocaleString()
+        };
+
+        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+        posts.push(post);
+        localStorage.setItem("posts", JSON.stringify(posts));
+
+        displayPosts();
+        document.getElementById("title").value = "";
+        document.getElementById("content").value = "";
+        document.getElementById("mediaUrl").value = "";
+    }
+
+    function displayPosts() {
+        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+        const container = document.getElementById("posts");
+        container.innerHTML = "";
+
+        posts.reverse().forEach(post => {
+            let media = "";
+            if (post.mediaUrl) {
+                if (post.mediaUrl.endsWith(".mp4")) {
+                    media = `<video class="video" controls src="${post.mediaUrl}"></video>`;
+                } else {
+                    media = `<img class="media" src="${post.mediaUrl}">`;
+                }
+            }
+
+            container.innerHTML += `
+                <div class="post">
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    ${media}
+                    <p><small>Posted on ${post.date}</small></p>
+                </div>
+            `;
+        });
+    }
+
+    displayPosts();
+</script>
+
+</body>
+</html>
